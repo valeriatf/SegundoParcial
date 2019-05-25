@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.View.NotesPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout
+                Padding="15"
+                BackgroundColor="White">
+                <Image
+                    Source="">
+                </Image>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Nota:"
+                        TextColor="Black">
+                    </Label>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Note, Mode=TwoWay}"
+                        Placeholder="Ingrese su nota">
+                    </Entry>
+                    
+                </Grid>
+                <ActivityIndicator>
+                    <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+                    </ActivityIndicator>
+                    <Button
+                    BackgroundColor="Navy"
+                    Text="Note"
+                    Command="{Binding NoteCommand, Mode=TwoWay}"
+                    IsEnabled="{Binding IsEnabled}"
+                    TextColor="White">
+                    </Button>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
