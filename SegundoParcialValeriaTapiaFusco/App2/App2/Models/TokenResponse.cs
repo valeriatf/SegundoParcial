@@ -1,12 +1,11 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
 
 namespace App2.Models
 {
-    using System;
-    using Newtonsoft.Json;
+    
+    
 
     public class TokenResponse
     {
