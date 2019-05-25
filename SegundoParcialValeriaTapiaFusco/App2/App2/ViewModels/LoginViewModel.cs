@@ -4,37 +4,35 @@ using System.Text;
 
 namespace App2.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
+    using System;
+    using System.Windows.Input;
+    using Service;
+    using Xamarin.Forms;
+    using Models;
+    using View;
+
     public class LoginViewModel : BaseViewModel
     {
         #region Attributes
-        string email;
+        string notes;
         string password;
         bool isrunning;
         bool isenable;
         #endregion
         #region Properties
-        public string Email
+        public string Notes
         {
             get
             {
-                return this.email;
+                return this.notes;
             }
             set
             {
-                SetValue(ref this.email, value);
+                SetValue(ref this.notes, value);
             }
         }
-        public string Password
-        {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-                SetValue(ref this.password, value);
-            }
-        }
+        
         public bool IsRunning
         {
             get
@@ -70,20 +68,14 @@ namespace App2.ViewModels
 
         private async void cmdLogin()
         {
-            if (string.IsNullOrEmpty(Email))
+            if (string.IsNullOrEmpty(Notes))
             {
-                await App.Current.MainPage.DisplayAlert("Email empty",
-                                                    "Please input email",
+                await App.Current.MainPage.DisplayAlert("Note empty",
+                                                    "Please input your Note",
                                                     "Accept");
                 return;
             }
 
-            if (string.IsNullOrEmpty(Password))
-            {
-                await App.Current.MainPage.DisplayAlert("Password empty",
-                                                        "Please entry password", "Accept");
-                return;
-            }
 
             IsRunning = true;
         }

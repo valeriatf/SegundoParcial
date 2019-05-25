@@ -1,5 +1,6 @@
 ﻿namespace App2.Service
 {
+    using App2.Models;
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
